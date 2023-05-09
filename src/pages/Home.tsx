@@ -1,13 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import TodoList from "../components/TodoList";
 
 const url = "https://645a917b65bd868e931ed42c.mockapi.io/todos";
-
-interface TodoType {
-  id: string | number;
-  task: string;
-  isDone: boolean;
-}
 
 const Home = () => {
   const [todos, setTodos] = useState<TodoType[]>([]);
@@ -15,7 +10,7 @@ const Home = () => {
   const getTodos = async () => {
     try {
       const { data } = await axios.get<TodoType[]>(url);
-      return data;
+      setTodos(data);
     } catch (error) {
       console.log(error);
     }
@@ -25,7 +20,14 @@ const Home = () => {
     getTodos();
   }, []);
 
-  return <div>Home</div>;
+  return (
+    <div>
+      Home
+      <div>
+        <TodoList todos={todos} />
+      </div>
+    </div>
+  );
 };
 
 export default Home;
