@@ -1,6 +1,10 @@
 import React from "react";
 
-const TodoListItem = () => {
+interface ITodoItem {
+  todo: TodoType;
+}
+
+const TodoListItem: React.FC<ITodoItem> = ({ todo }) => {
   return <div>TodoListItem</div>;
 };
 
