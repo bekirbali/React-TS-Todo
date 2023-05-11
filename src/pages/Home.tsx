@@ -55,15 +55,8 @@ const Home = () => {
 
   return (
     <div>
-      Home
-      <div>
-        <InputForm addTodo={addTodo} />
-        <TodoList
-          todos={todos}
-          toggleTodo={toggleTodo}
-          deleteTodo={deleteTodo}
-        />
-      </div>
+      <InputForm addTodo={addTodo} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );
 };
