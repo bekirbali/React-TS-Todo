@@ -7,9 +7,9 @@ body {
   background-color: #3a4257;
   background-image: linear-gradient(
     43deg,
-    #3a4257 0%,
-    #f0ddbc 46%,
-    #3a4257 100%
+    #3a5756 0%,
+    #bec55a 46%,
+    #3a5756 100%
   );
   height: 100vh;
   width: 100vw;
@@ -84,10 +84,10 @@ body {
 .btn-hover.btn-color {
   background-image: linear-gradient(
     to right,
-    #403a60,
-    #f0ddbc,
+    #3a5756,
+    #bec55a,
     #5d477772,
-    #3a4257
+    #3a5756
   );
   box-shadow: 0 4px 15px 0 rgba(240, 221, 188, 0.628);
 }
@@ -112,7 +112,7 @@ ul {
 
 .checked {
   text-decoration: line-through;
-  color: purple;
+  color: #bec55a;
 }
 
 li {
@@ -125,6 +125,7 @@ li {
   margin: 1rem 0rem;
   width: 100%;
   padding-left: 5px;
+  text-transform: capitalize;
   color: #f0ddbcd7;
   cursor: pointer;
 }

@@ -20,9 +20,9 @@ const TodoListItem: React.FC<ITodoItem> = ({
       ) : (
         <p onClick={() => toggleTodo(todo)}>{todo.task}</p>
       )}
-      <p onClick={() => deleteTodo(todo.id)} className="task-icons">
+      <span onClick={() => deleteTodo(todo.id)} className="task-icons">
         X
-      </p>
+      </span>
     </li>
   );
 };
