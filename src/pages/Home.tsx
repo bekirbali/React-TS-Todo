@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import TodoList from "../components/TodoList";
 import InputForm from "../components/InputForm";
+import { get } from "http";
 
 const url = "https://645a917b65bd868e931ed42c.mockapi.io/todos";
 
@@ -12,6 +13,15 @@ const Home = () => {
     try {
       const { data } = await axios.get<TodoType[]>(url);
       setTodos(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const toggleTodo: ToggleFn = async (item) => {
+    try {
+      await axios.put(`${url}/${item.id}`, { ...item, isDone: !item.isDone });
+      getTodos();
     } catch (error) {
       console.log(error);
     }
@@ -30,6 +40,15 @@ const Home = () => {
     }
   };
 
+  const deleteTodo: DeleteFn = async (id) => {
+    try {
+      await axios.delete(`${url}/${id}`);
+      getTodos();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getTodos();
   }, []);
@@ -39,7 +58,11 @@ const Home = () => {
       Home
       <div>
         <InputForm addTodo={addTodo} />
-        <TodoList todos={todos} />
+        <TodoList
+          todos={todos}
+          toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
+        />
       </div>
     </div>
   );
