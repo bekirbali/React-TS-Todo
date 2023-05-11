@@ -7,3 +7,5 @@ interface TodoType {
 interface ITodoList {
   todos: TodoType[];
 }
+
+type AddFn = (text: string) => void;
