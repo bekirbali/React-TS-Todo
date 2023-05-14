@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ITodoItem {
   todo: TodoType;
   toggleTodo: ToggleFn;

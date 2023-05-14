@@ -1,4 +1,3 @@
-import React from "react";
 import TodoListItem from "./TodoListItem";
 
 const TodoList: React.FC<ITodoList> = ({ todos, toggleTodo, deleteTodo }) => {
